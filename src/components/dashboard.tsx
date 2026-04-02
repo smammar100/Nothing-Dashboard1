@@ -216,7 +216,7 @@ const ND_LIGHT = {
   warning: "#B8912E",
 } as const;
 
-type NDTokens = typeof ND_DARK;
+type NDTokens = typeof ND_DARK | typeof ND_LIGHT;
 
 const ThemeContext = React.createContext<{ theme: "dark" | "light"; toggle: () => void; nd: NDTokens }>({
   theme: "dark",
@@ -1224,7 +1224,7 @@ const sectionVariants = {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { delay: i * 0.12, duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { delay: i * 0.12, duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
   }),
 };
 
